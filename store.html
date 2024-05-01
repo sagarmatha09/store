@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "shortcut icon" type="x-icon" href="sagarmathanetwork.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Sagarmatha MC</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body {
+            background-color: rgb(1, 33, 43);
+            color: white;
+        }
+        .header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .header img {
+            height: 84px;
+            width: 84px;
+        }
+        .name {
+            display: flex;
+            justify-content: space-around;
+        }
+        .logo {
+            margin-top: 12px;
+            font-size: 25px;
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px;
+        }
+        .navbar a {
+            font-size: 18px;
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover,
+        .navbar a.active {
+            color: aqua;
+        }
+        
+        .store-section {
+            padding: 100px 10%;
+            text-align: center;
+        }
+        .rank-container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .rank-item {
+            border: 1px solid aqua;
+            position: relative;
+            height: 277px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 600px;
+            display: none;
+            backdrop-filter: blur(10px); /* Adding background blur effect */
+        }
+        .rank-item img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        .rank-item .rank-name {
+            position: absolute;
+            top: 15px;
+            left: 20%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #FBCE0E, #F4B636, #EE9E5E, #E78787, #E06FAF, #DA57D7, #D33FFF, #FFFFFF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .rank-item h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .rank-item p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .rank-item button {
+            margin-top: 84px;
+            float: right;
+            background-color: aquamarine;
+            color: rgb(3, 23, 34);
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .rank-item button:hover {
+            background-color: aqua;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 24px;
+            color: aqua;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .prev {
+            left: 20px;
+        }
+        .next {
+            right: 20px;
+        }
+
+        /* Styles for the popup */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .popup-content {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 80%;
+        }
+        .close-btn {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .discord-btn {
+            display: inline-block;
+            background-color: aqua;
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .discord-btn:hover {
+            background-color: #00cccc;
+        }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="name">
+            <a href="index.html"><img src="sagarmathanetwork.png" alt="Sagarmatha mc logo"></a>
+            <a href="#" class="logo">SAGARMATHA MC</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="store.html" class="active">Store</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+
+    <section class="store-section">
+        <h2>Paid Ranks</h2>
+        <div class="rank-container">
+            <button class="prev" onclick="prevRank1()">&#10094;</button>
+            <div class="rank-item rank1" style="display: flex;">
+                <span class="rank-name">Elite</span>
+                <img src="steve.gif" alt="">
+                <div>
+                    <h3>Elite Rank</h3>
+                    <p>Unlock premium features with the Elite rank!</p>
+                    <button>Buy Now - NPR105</button>
+                </div>
+            </div>
+            <div class="rank-item rank2">
+                <span class="rank-name">Prime</span>
+                <img src="steve.gif" alt="Gold Rank">
+                <div>
+                    <h3>Prime Rank</h3>
+                    <p>Upgrade your gaming experience with the Prime rank!</p>
+                    <button>Buy Now - NPR55</button>
+                </div>
+            </div>
+            <div class="rank-item rank3">
+                <span class="rank-name">Deluxe</span>
+                <img src="steve.gif" alt="Iron Rank">
+                <div>
+                    <h3>Deluxe Rank</h3>
+                    <p>Simplify your journey and enjoy more with the Deluxe rank!</p>
+                    <button>Buy Now - NPR25</button>
+                </div>
+            </div>
+            <button class="next" onclick="nextRank1()">&#10095;</button>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="store-section">
+        <h2>In-Game Paid Ranks</h2>
+        <div class="rank-container">
+            <button class="prev" onclick="prevRank2()">&#10094;</button>
+            <div class="rank-item rank4" style="display: flex;">
+                <span class="rank-name">Supreme</span>
+                <img src="steve.gif" alt="">
+                <div>
+                    <h3>Supreme Rank</h3>
+                    <p>Unlock supreme features in-game with the Supreme rank!</p>
+                    <button>Buy Now - money100000</button>
+                </div>
+            </div>
+            <div class="rank-item rank5">
+                <span class="rank-name">Expert</span>
+                <img src="steve.gif" alt="Gold Rank">
+                <div>
+                    <h3>Expert Rank</h3>
+                    <p>Gain expertise and respect with the Expert rank!</p>
+                    <button>Buy Now - 90000</button>
+                </div>
+            </div>
+            <div class="rank-item rank6">
+                <span class="rank-name">Epic</span>
+                <img src="steve.gif" alt="Iron Rank">
+                <div>
+                    <h3>Epic Rank</h3>
+                    <p>Embark on an epic journey with the Epic rank!</p>
+                    <button>Buy Now - 60000</button>
+                </div>
+            </div>
+            <button class="next" onclick="nextRank2()">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Popup for Discord link -->
+    <script>
+    let currentRank1 = 1;
+        let currentRank2 = 1;
+
+        function showRank1(n) {
+            const ranks = document.querySelectorAll('.store-section:nth-of-type(1) .rank-item');
+            if (n > ranks.length) {
+                currentRank1 = 1;
+            }
+            if (n < 1) {
+                currentRank1 = ranks.length;
+            }
+            ranks.forEach(rank => rank.style.display = 'none');
+            ranks[currentRank1 - 1].style.display = 'flex';
+        }
+
+        function showRank2(n) {
+            const ranks = document.querySelectorAll('.store-section:nth-of-type(2) .rank-item');
+            if (n > ranks.length) {
+                currentRank2 = 1;
+            }
+            if (n < 1) {
+                currentRank2 = ranks.length;
+            }
+            ranks.forEach(rank => rank.style.display = 'none');
+            ranks[currentRank2 - 1].style.display = 'flex';
+        }
+
+        function nextRank1() {
+            showRank1(currentRank1 += 1);
+        }
+
+        function prevRank1() {
+            showRank1(currentRank1 -= 1);
+        }
+
+        function nextRank2() {
+            showRank2(currentRank2 += 1);
+        }
+
+        function prevRank2() {
+            showRank2(currentRank2 -= 1);
+        }
+
+        showRank1(currentRank1);
+        showRank2(currentRank2);
+        
+        function showPopup() {
+            var popup = document.createElement('div');
+            popup.classList.add('popup');
+            popup.innerHTML = `
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePopup()">&times;</span>
+                    <h2>Join Our Discord!</h2>
+                    <p>Click the button below to join our Discord server and get support for your purchase:</p>
+                    <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank" class="discord-btn">Join Discord</a>
+                </div>
+            `;
+            document.body.appendChild(popup);
+        }
+
+        function closePopup() {
+            var popup = document.querySelector('.popup');
+            if (popup) {
+                popup.remove();
+            }
+        }
+
+        var buyButtons = document.querySelectorAll('.rank-item button');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Prevent the event from bubbling up to the window
+                event.stopPropagation();
+                showPopup();
+            });
+        });
+
+        // Function to close popup when clicking outside of it
+        function closePopupOnClickOutside(event) {
+            var popup = document.querySelector('.popup');
+            if (popup && !popup.contains(event.target)) {
+                popup.remove();
+                // Remove the event listener after closing the popup
+                window.removeEventListener('click', closePopupOnClickOutside);
+            }
+        }
+
+        // Add event listener to Buy Now buttons
+        var buyButtons = document.querySelectorAll('.rank-item button');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                // Prevent the event from bubbling up to the window
+                event.stopPropagation();
+                showPopup();
+                // Add event listener to close popup when clicking outside of it
+                window.addEventListener('click', closePopupOnClickOutside);
+            });
+        });
+    </script>
+</body>
+</html>

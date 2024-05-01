@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "shortcut icon" type="x-icon" href="sagarmathanetwork.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sagarmatha MC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body {
+            background-color: rgb(1, 33, 43);
+            color: white;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .header img {
+            height: 84px;
+            width: 84px;
+        }
+        .name {
+            display: flex;
+            justify-content: space-around;
+        }
+        .logo {
+            margin-top: 12px;
+            font-size: 25px;
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px;
+        }
+        .navbar a {
+            font-size: 18px;
+            color: aliceblue;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover,
+        .navbar a.active {
+            color: aqua;
+        }
+        .contact-section {
+            padding: 100px 10%;
+            text-align: center;
+        }
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .contact-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            margin-top: 30px;
+            text-align: left;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 5px;
+        }
+        .contact-form textarea {
+            resize: none;
+        }
+        .contact-form input[type="submit"] {
+            background-color: aquamarine;
+            color: rgb(3, 23, 34);
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: aqua;
+        }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <div class="name">
+            <a href="index.html"><img src="sagarmathanetwork.png" alt="Sagarmatha mc logo"></a>
+            <a href="#" class="logo">SAGARMATHA MC</a>
+        </div>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>Have any questions or suggestions? We'd love to hear from you!</p>
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="ab9f332d-d070-4c72-bfb9-72e955a22a74">
+                    <input type="text" name="in-game-name" placeholder="Your Game Name">
+                    <input type="email" name="email" placeholder="Your Email">
+                    <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

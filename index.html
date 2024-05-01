@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel= "shortcut icon" type="x-icon" href="sagarmathanetwork.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=|, initial-scale=1.0">
+    <title>Sagarmatha MC</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        body{
+            background-color: rgb(1, 33, 43);
+             color: white;
+        }
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 10%;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+    .header img{
+      height: 84px;
+      width: 84px;
+    }
+    .name {
+      display: flex;
+      justify-content: space-around;
+    }
+    .logo{
+      margin-top: 12px;
+        font-size: 25px;
+        color:aliceblue;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 10px;
+    }
+
+  .navbar a {
+    font-size: 18px;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+transition: .3s;
+  }
+  .navbar a:hover,
+  .navbar a.active{
+    color: aqua;
+
+  }
+  .home {
+    background: url(New\ Project.webp);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items:  center;
+    padding: 0 10%;
+
+  }
+  
+  .home-content {
+    
+    max-width: 600px;
+     
+  }
+  .home-content h1{
+    font-size: 40px;
+    font-weight: 700 ; 
+    line-height: 1.2;
+  }
+
+  .home-content p {
+      font-size: 16px;
+      margin: 20px 0 40px;
+  }
+  .home-content.btn-box {
+    width: 345px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+  }
+  .btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background-color:aquamarine;
+    border: 2px solid aquamarine;
+    border-radius: 8px;
+    font-size: 19px;
+    color: rgb(3, 23, 34); 
+    text-decoration: none; 
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .btn-box a:hover {
+    color: aqua;
+  }
+
+   .btn-box a:nth-child(2) {
+background-color: transparent;
+color: aqua;
+   }
+    .btn-box a:nth-child(2):hover {
+      color :rgb(1, 33, 43)
+
+    }
+    .btn-box a:nth-child(2)::before {
+      background-color: aqua;
+    }
+
+   .btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height : 100%;
+    background-color:rgb(1, 33, 43);
+    z-index: -1 ;
+    transition: .5s;
+   }
+
+   .btn-box a:hover::before {
+    width: 100%;
+   }
+
+   .home-ingHover {
+position: absolute;
+top: 0;
+right: 30px;
+width: 500px; 
+height: 100%;
+background: transparent;
+transition: 3s;
+   }
+
+   .home-ingHover:hover {
+    background-color: rgb(1, 33, 43);
+    opacity: .8;
+   }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head> 
+<body>
+<header class="header"> 
+  <div class="name">
+  <a href="index.html"><img src="sagarmathanetwork.png" alt="Sagarmatha mc logo"></a>
+    <a href="#" class="logo">SAGARMATHA MC</a>
+  </div>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="store.html">Store</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="home">
+    <div class="home-content">
+        <h1>Welcome to sagarmatha network's website!</h1>
+        <p>Here You Can Purchase Minecraft Ranks!</p>
+        <div class="btn-box">
+            <a href="store.html"><i class='bx bxs-store' style="padding: 5px;"></i>Store</a>
+            <a href="https://discord.gg/KRNb2QK6z5" target="_blank"><i class='bx bxl-discord-alt' style="padding: 5px;"> </i> Discord</a>
+        </div>
+    </div>
+    <div class="home-sci"> 
+      <a href="#"></a>
+    </div> 
+    <span class="home-ingHover">
+
+    </span>
+</section>
+</body>
+</html>
